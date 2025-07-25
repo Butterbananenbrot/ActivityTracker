@@ -3,5 +3,6 @@ from django.shortcuts import render
 
 # Create your views here.
 def main_dashboard(request):
-    return HttpResponse("Dashboard..." )
+    # return HttpResponse("Dashboard..." )
+    return render(request, "dashboard/index.html")
 

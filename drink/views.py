@@ -4,5 +4,4 @@ from django.shortcuts import render
 # Create your views here.
 def welcome_page(request):
     # return HttpResponse("Welcome to breaktime app." )
-    return render(request, 'breaktime/index.html')
-
+    return render(request, 'drink/index.html')
