@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "breaktime.apps.BreaktimeConfig",
-    'dashboard.apps.DashboardConfig'
+    'dashboard.apps.DashboardConfig',
+    'drink.apps.DrinkConfig',
+    'sleeptime.apps.SleeptimeConfig',
 ]
 
 MIDDLEWARE = [
