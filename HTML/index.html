@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pill Select</title>
+  <style>
+    fieldset {
+      border: none;
+    }
+
+    .pill-select input[type="radio"] {
+      display: none;
+    }
+
+    .pill-select label {
+      display: inline-block;
+      padding: 0.5em 1.2em;
+      margin: 0.3em;
+      border: 1px solid #ccc;
+      border-radius: 999px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .pill-select input[type="radio"]:checked + label {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <fieldset class="pill-select">
+  <legend>Select a maintenance drone:</legend>
+
+  <span>
+    <input type="radio" id="huey" name="drone" value="huey" checked />
+    <label for="huey">Huey</label>
+  </span>
+  <span>
+    <input type="radio" id="dewey" name="drone" value="dewey" />
+    <label for="dewey">Dewey</label>
+  </span>
+  <span>
+    <input type="radio" id="louie" name="drone" value="louie" />
+    <label for="louie">Louie</label>
+  </span>
+</fieldset>
+</body>
+</html>

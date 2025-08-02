@@ -1,0 +1,20 @@
+.pill-select input[type="radio"] {
+    display: none;
+}
+.pill-select label {
+    display: inline-block;
+    padding: 0.4em 1em;
+    margin: 0.2em;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    cursor: pointer;
+    background: #f2f2f2;
+}
+.pill-select input[type="radio"]:checked + label {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.pill-select div {
+  display: inline-block;
+}
