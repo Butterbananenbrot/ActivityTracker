@@ -15,8 +15,8 @@ class SleepInterval(models.Model):
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     sleeping_place = models.CharField(max_length=1, choices=SLEEPING_PLACE_CHOICES)
-    recreation = models.IntegerField(choices=ONE_TO_TEN_SCALE)
-    tiredness_before_sleeping = models.IntegerField(choices=ONE_TO_TEN_SCALE)
+    recreation = models.IntegerField(choices=ONE_TO_TEN_SCALE, default=1)
+    tiredness_before_sleeping = models.IntegerField(choices=ONE_TO_TEN_SCALE, default=1)
 
     def __str__(self):
         # Da wir die Methode auf einem Objekt aufrufen,
