@@ -19,3 +19,8 @@ class Drink(models.Model):
 
     def __str__(self):
         return Drink.DRINK_CHOICES_MAP.get(self.drink)
+
+    def max_one_liter(self ):
+        # Validierungsmethode: TRUE bei korrektem Input
+        check = self.milliliters <= 1000
+        return check
