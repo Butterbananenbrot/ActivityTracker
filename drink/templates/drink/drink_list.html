@@ -1,0 +1,23 @@
+{% block content %}
+    <h1>Getränkeliste</h1>
+    {% if drink_list_context %}
+        <table>
+            <tr>
+                <th>Getränk</th>
+                <th>Durstlöschung</th>
+                <th>Milliliter</th>
+            </tr>
+
+            {% for drink in drink_list_context %}
+                <tr>
+                    <td>{{ drink.drink }}</td>
+                    <td>{{ drink.thirst_quenched }}</td>
+                    <td>{{ drink.milliliters }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Keine Getränke gefunden.</p>
+    {% endif %}
+{% endblock %}
+
