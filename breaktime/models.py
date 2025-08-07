@@ -3,23 +3,16 @@ import datetime
 from auxiliary.choices import ONE_TO_TEN_SCALE
 
 class Break(models.Model):
-    ACTIVITY_CHOICES = [
-        ("WA", "Walk"),
-        ("SL", "Sleep"),
-        ("EA", "Eat"),
-        ("SM", "Smalltalk"),
-    ]
-    PLACE_CHOICES = [
-        ("O", "Office"),
-        ("P", "Park"),
-        ("F", "Forest"),
-        ("C", "Cafe"),
-    ]
+
+
+    ACTIVITY_CHOICES = [(choice, choice) for choice in ["Walk", "Sleep", "Eat", "Smalltalk"]]
+    PLACE_CHOICES = [(choice, choice) for choice in ["Office", "Park", "Forest", "Cafe"]]
+
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    activity = models.CharField(max_length=2, choices=ACTIVITY_CHOICES, default="WA")
+    activity = models.CharField(max_length=20, choices=ACTIVITY_CHOICES, default=ACTIVITY_CHOICES[0][0])
     # activity = models.CharField("Activity", choices=["Walk", "Sleep", "Eat", "Smalltalk"], default="Smalltalk")
-    place = models.CharField(max_length=1, choices=PLACE_CHOICES, default="P")
+    place = models.CharField(max_length=20, choices=PLACE_CHOICES, default=PLACE_CHOICES[0][0])
     recreation = models.IntegerField(choices=ONE_TO_TEN_SCALE, default=5) # import from aux module
 
     def __str__(self):
