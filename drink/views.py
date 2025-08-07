@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views import generic
 
+from auxiliary.view_generator import generate_table_view
 from drink.models import Drink
 
 
@@ -18,3 +19,6 @@ class DrinkListView(generic.ListView):
 
     def get_queryset(self):
         return Drink.objects.all()[0:4 + 1]
+
+
+drink_table_view = generate_table_view(Drink)

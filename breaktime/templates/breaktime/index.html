@@ -7,8 +7,9 @@
 
 <body>
     <h1>Übersichtsseite für Pausenzeiten. </h1>
-    <ul>
-        <li><a href="{% url 'breaktime:break_list' %}">Tabellenübersicht</a></li>
-    </ul>
+{#    <ul>#}
+{#        <li><a href="{% url 'breaktime:break_list' %}">Tabellenübersicht</a></li>#}
+{#    </ul>#}
+    <a href="{% url "sleeptime:sleepinterval_table_view" %}">Tabellenansicht</a>
 </body>
 </html>

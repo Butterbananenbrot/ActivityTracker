@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        {#    Komische Lösung an dieser Stelle, da wir uns nur auf ersten Dateneintrag beziehen#}
+        {% for key in data.0.keys %}
+            <th>{{ key }}</th>
+        {% endfor %}
+    </tr>
+
+    {% for entry in data %}
+        <tr>
+            {% for value in entry.values %}
+                <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
