@@ -25,13 +25,13 @@ def drink_chart_svg(request):
             drink_norm=Case(
                 When(drink__in=["W", "Water"], then=Value("Water")),
                 When(drink__in=["C", "Coffee"], then=Value("Coffee")),
-                When(drink__in=["B", "Beer"], then=Value("Beer")),
-                default=Value("Other"),
-                output_field=CharField(),
-            )
+            When(drink__in=["B", "Beer"], then=Value("Beer")),
+            default=Value("Other"),
+            output_field=CharField(),
         )
-        .values("drink_norm")
-        .annotate(count=Count("id"))
+    )
+    .values("drink_norm")
+    .annotate(count=Count("id"))
     )
 
     labels = ["Water", "Coffee", "Beer"]
