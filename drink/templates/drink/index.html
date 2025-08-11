@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-
 <body>
-<h1>Übersichtsseite für Trinken, lecker Wasser. </h1>
-{#<ul>#}
-{#    <li><a href="{% url 'drink:drink_list' %}">Tabellenübersicht</a></li>#}
-{#</ul>#}
-<a href="{% url "drink:drink_table_view" %}">Tabellenansicht</a>
+<h1>Übersichtsseite für Trinken, lecker Wasser.</h1>
+    <a href="{% url 'drink:drink_table_view' %}">Tabellenansicht</a><br>
+    <a href="{% url 'drink:drink_chart_view' %}">Diagrammansicht</a>
 </body>
 </html>
