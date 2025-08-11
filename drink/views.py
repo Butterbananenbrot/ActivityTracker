@@ -5,8 +5,11 @@ from auxiliary.view_generator import generate_table_view
 from drink.models import Drink
 import io
 import matplotlib
+
 matplotlib.use("Agg")  # headless backend
 import matplotlib.pyplot as plt
+from django.views.decorators.cache import cache_page
+
 
 # Create your views here.
 def welcome_page(request):
@@ -14,6 +17,7 @@ def welcome_page(request):
     return render(request, 'drink/index.html')
 
 
+@cache_page(60)  # cache for 60 seconds
 def drink_chart_svg(request):
     qs = (
         Drink.objects
@@ -48,6 +52,7 @@ def drink_chart_svg(request):
     plt.close(fig)
     buf.seek(0)
     return HttpResponse(buf.getvalue(), content_type="image/svg+xml")
+
 
 def drink_chart_view(request):
     # Map legacy codes AND full names into stable buckets
