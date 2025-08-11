@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hallo auf dem Dashboard. </title>
+</head>
+<body>
+    <ul>
+        <li><a href = 'breaktime'>Pausezeiten</a></li>
+        <li><a href = 'sleeptime'>Schlafzeiten</a></li>
+        <li><a href = 'drink'>Trinken</a></li>
+        <li><a href = 'admin'>Admin</a></li>
+    </ul>
+
+    <h1>Diagramm: Anzahl Getränke</h1>
+    <img src="{% url 'drink:drink_chart_svg' %}" alt="Drinks chart">
+
+</body>
+</html>
