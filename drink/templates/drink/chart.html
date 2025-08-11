@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Getränke-Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{#    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>#}
 </head>
 <body>
 <h1>Diagramm: Anzahl Getränke</h1>
-<canvas id="drinksChart" width="600" height="300"></canvas>
-
-<script>
-    const labels = {{ labels|safe }};
-    const counts = {{ data|safe }};
-
-    const ctx = document.getElementById('drinksChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels,
-            datasets: [{
-                label: 'Number of drinks',
-                data: counts,
-                backgroundColor: ['#3b82f6', '#f59e0b', '#10b981']
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: { beginAtZero: true, ticks: { precision: 0 } }
-            }
-        }
-    });
-</script>
+<img src="{% url 'drink:drink_chart_svg' %}" alt="Drinks chart">
+{#<canvas id="drinksChart" width="600" height="300"></canvas>#}
+{##}
+{#<script>#}
+{#    const labels = {{ labels|safe }};#}
+{#    const counts = {{ data|safe }};#}
+{##}
+{#    const ctx = document.getElementById('drinksChart').getContext('2d');#}
+{#    new Chart(ctx, {#}
+{#        type: 'bar',#}
+{#        data: {#}
+{#            labels,#}
+{#            datasets: [{#}
+{#                label: 'Number of drinks',#}
+{#                data: counts,#}
+{#                backgroundColor: ['#3b82f6', '#f59e0b', '#10b981']#}
+{#            }]#}
+{#        },#}
+{#        options: {#}
+{#            responsive: true,#}
+{#            scales: {#}
+{#                y: { beginAtZero: true, ticks: { precision: 0 } }#}
+{#            }#}
+{#        }#}
+{#    });#}
+{#</script>#}
 </body>
 </html>
