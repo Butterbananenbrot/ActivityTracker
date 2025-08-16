@@ -77,6 +77,7 @@
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">ActivityTracker</a>
+    <!--
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -89,6 +90,7 @@
             <a class="nav-link px-3" href="#">Sign out</a>
         </div>
     </div>
+    -->
 </header>
 
 <div class="container-fluid">
@@ -343,6 +345,17 @@
             {% else %}
                 <p>Keine Getränke gefunden.</p>
             {% endif %}
+
+            <h2>Getränkeliste Version2</h2>
+            {% include 'drink/drink_list.html' %}
+
+            <p> dies ist ein text, sanity</p>
+
+            <h2>Getränkeliste Version3</h2>
+            {% include 'generic_table.html' with data=drink_list_context %}
+
+            <p> dies ist ein text, sanity2</p>
+
         </main>
     </div>
 </div>

@@ -1,21 +1,23 @@
 {% block content %}
     <h1>Getränkeliste</h1>
     {% if drink_list_context %}
-        <table>
-            <tr>
-                <th>Getränk</th>
-                <th>Durstlöschung</th>
-                <th>Milliliter</th>
-            </tr>
-
-            {% for drink in drink_list_context %}
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
                 <tr>
-                    <td>{{ drink.drink_label }}</td>
-                    <td>{{ drink.thirst_quenched }}</td>
-                    <td>{{ drink.milliliters }}</td>
+                    <th>Getränk</th>
+                    <th>Durstlöschung</th>
+                    <th>Milliliter</th>
                 </tr>
-            {% endfor %}
-        </table>
+
+                {% for drink in drink_list_context %}
+                    <tr>
+                        <td>{{ drink.drink_label }}</td>
+                        <td>{{ drink.thirst_quenched }}</td>
+                        <td>{{ drink.milliliters }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
     {% else %}
         <p>Keine Getränke gefunden.</p>
     {% endif %}

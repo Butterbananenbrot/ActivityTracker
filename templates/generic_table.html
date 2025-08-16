@@ -1,16 +1,19 @@
-<table>
-    <tr>
-        {#    Komische Lösung an dieser Stelle, da wir uns nur auf ersten Dateneintrag beziehen#}
-        {% for key in data.0.keys %}
-            <th>{{ key }}</th>
-        {% endfor %}
-    </tr>
-
-    {% for entry in data %}
+{% load filters %}
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
         <tr>
-            {% for value in entry.values %}
-                <td>{{ value }}</td>
+            {#    Komische Lösung an dieser Stelle, da wir uns nur auf ersten Dateneintrag beziehen#}
+            {% for key in data.0.keys %}
+                <th>{{ key|filter_keys }}</th>
             {% endfor %}
         </tr>
-    {% endfor %}
-</table>
+
+        {% for entry in data %}
+            <tr>
+                {% for value in entry.values %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
