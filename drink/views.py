@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.db.models import Case, When, Value, CharField, Count
+
+from auxiliary.context_generator import create_drink_data_context
 from auxiliary.view_generator import generate_table_view
 from drink.models import Drink
 import io
@@ -13,8 +15,8 @@ from django.views.decorators.cache import cache_page
 
 # Create your views here.
 def welcome_page(request):
-    # return HttpResponse("Welcome to breaktime app." )
-    return render(request, 'drink/index.html')
+    drinks = create_drink_data_context()
+    return render(request, 'drink/index.html', {"drink_data_context": drinks})
 
 
 @cache_page(60)  # cache for 60 seconds
@@ -25,13 +27,13 @@ def drink_chart_svg(request):
             drink_norm=Case(
                 When(drink__in=["W", "Water"], then=Value("Water")),
                 When(drink__in=["C", "Coffee"], then=Value("Coffee")),
-            When(drink__in=["B", "Beer"], then=Value("Beer")),
-            default=Value("Other"),
-            output_field=CharField(),
+                When(drink__in=["B", "Beer"], then=Value("Beer")),
+                default=Value("Other"),
+                output_field=CharField(),
+            )
         )
-    )
-    .values("drink_norm")
-    .annotate(count=Count("id"))
+        .values("drink_norm")
+        .annotate(count=Count("id"))
     )
 
     labels = ["Water", "Coffee", "Beer"]
