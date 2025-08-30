@@ -149,6 +149,8 @@
             </div>
 
             {% include 'generic_table.html' with data=break_data_context %}
+
+            <img class="my-4" src="{% url 'breaktime:break_chart_svg' %}" alt="Break Chart">
         </main>
     </div>
 </div>

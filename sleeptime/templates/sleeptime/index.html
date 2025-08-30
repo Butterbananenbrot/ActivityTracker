@@ -148,6 +148,7 @@
             </div>
 
             {% include 'generic_table.html' with data=sleepinterval_data_context %}
+            <img class="my-4" src="{% url 'sleeptime:sleepinterval_chart_svg' %}" alt="Sleeping Places">
 
         </main>
     </div>

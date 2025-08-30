@@ -8,6 +8,5 @@ from . import views
 app_name = "drink"
 urlpatterns = [
     path("", views.welcome_page, name="index"),
-    path("chart/", views.drink_chart_view, name="drink_chart_view"),
     path("chart-mpl.svg", views.drink_chart_svg, name="drink_chart_svg"),# new chart view
 ]
