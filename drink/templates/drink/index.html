@@ -147,15 +147,10 @@
                 <h1 class="h2">Drinks Consumed</h1>
 
             </div>
+            {% include 'generic_table.html' with data=drink_data_context %}
 
             <img class="my-4 w-100" src="{% url 'drink:drink_chart_svg' %}" alt="Drinks chart">
 
-            <h2>Getränkeliste Version3</h2>
-            {% include 'generic_table.html' with data=drink_data_context %}
-
-            <p> dies ist ein text, sanity2</p>
-            <a href="{% url 'drink:drink_table_view' %}">Tabellenansicht</a><br>
-            <a href="{% url 'drink:drink_chart_view' %}">Diagrammansicht</a>
         </main>
     </div>
 </div>

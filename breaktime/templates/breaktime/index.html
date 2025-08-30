@@ -148,7 +148,7 @@
 
             </div>
 
-            <a href="{% url "breaktime:break_table_view" %}">Tabellenansicht</a>
+            {% include 'generic_table.html' with data=break_data_context %}
         </main>
     </div>
 </div>
