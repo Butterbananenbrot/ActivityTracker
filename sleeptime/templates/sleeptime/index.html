@@ -147,7 +147,7 @@
                 <h1 class="h2">Sleep Times</h1>
             </div>
 
-            <a href="{% url "sleeptime:sleepinterval_table_view" %}">Tabellenansicht</a>
+            {% include 'generic_table.html' with data=sleepinterval_data_context %}
 
         </main>
     </div>

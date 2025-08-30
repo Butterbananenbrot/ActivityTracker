@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.db.models import Case, When, Value, CharField, Count
 
 from auxiliary.context_generator import create_drink_data_context
-from auxiliary.view_generator import generate_table_view
 from drink.models import Drink
 import io
 import matplotlib
@@ -79,6 +78,3 @@ def drink_chart_view(request):
     data = [counts_map.get(name, 0) for name in all_types]
 
     return render(request, "drink/chart.html", {"labels": labels, "data": data})
-
-
-drink_table_view = generate_table_view(Drink)

@@ -1,8 +1,6 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
-from auxiliary.view_generator import generate_table_view
-from sleeptime.models import SleepInterval
+from auxiliary.context_generator import create_sleepinterval_data_context
 
 
 # Create your views here.
@@ -11,4 +9,7 @@ def welcome_page(request):
     return render(request, 'sleeptime/index.html')
 
 
-sleepinterval_table_view = generate_table_view(SleepInterval)
+
+def welcome_page(request):
+    sleepintervals = create_sleepinterval_data_context()
+    return render(request, 'sleeptime/index.html', {"sleepinterval_data_context": sleepintervals})

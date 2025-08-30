@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from auxiliary.context_generator import create_drink_data_context
-from drink.models import Drink
 
 def main_dashboard(request):
     drinks = create_drink_data_context()
