@@ -1,7 +1,10 @@
 import io
 
+from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 from matplotlib import pyplot as plt
 
 from auxiliary.context_generator import create_sleepinterval_data_context
@@ -39,3 +42,19 @@ def sleepinterval_chart_svg(request):
     plt.close(fig)
     buf.seek(0)
     return HttpResponse(buf.getvalue(), content_type="image/svg+xml")
+
+class SleepIntervalCreateView(CreateView):
+
+    model = SleepInterval
+
+    fields = ["start_time", "end_time", "sleeping_place", "recreation", "tiredness_before_sleeping"]
+
+    template_name = "create_view.html"
+
+    success_url = reverse_lazy("sleeptime:index")
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields["start_time"].widget = forms.DateTimeInput(attrs={"type": "datetime-local"})
+        form.fields["end_time"].widget = forms.DateTimeInput(attrs={"type": "datetime-local"})
+        return form

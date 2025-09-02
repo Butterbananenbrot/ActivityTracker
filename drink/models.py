@@ -5,6 +5,7 @@ from auxiliary.choices import ONE_TO_TEN_SCALE
 
 class Drink(models.Model):
     DRINK_CHOICES = [(choice, choice) for choice in ["Water", "Coffee", "Beer"]]
+
     drink = models.CharField(max_length=20, choices=DRINK_CHOICES, default=DRINK_CHOICES[0][0])
     thirst_quenched = models.IntegerField(choices=ONE_TO_TEN_SCALE, default=1)  # import from aux module
     milliliters = models.IntegerField(validators=[MinValueValidator(20), MaxValueValidator(1000)])

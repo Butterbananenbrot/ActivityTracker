@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.db.models import Case, When, Value, CharField, Count
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
 from auxiliary.context_generator import create_drink_data_context
 from drink.models import Drink
@@ -53,3 +55,14 @@ def drink_chart_svg(request):
     plt.close(fig)
     buf.seek(0)
     return HttpResponse(buf.getvalue(), content_type="image/svg+xml")
+
+
+class DrinkCreateView(CreateView):
+
+    model = Drink
+
+    fields = ["drink", "thirst_quenched", "milliliters"]
+
+    template_name = "create_view.html"
+
+    success_url = reverse_lazy("drink:index")
