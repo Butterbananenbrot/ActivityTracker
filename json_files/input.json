@@ -1,0 +1,622 @@
+[
+  {
+    "model": "breaktime.break",
+    "pk": 1,
+    "fields": {
+      "start_time": "2025-09-01T09:30:00Z",
+      "end_time": "2025-09-01T09:50:00Z",
+      "activity": "Walk",
+      "place": "Park",
+      "recreation": 6
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 2,
+    "fields": {
+      "start_time": "2025-09-01T12:05:00Z",
+      "end_time": "2025-09-01T12:25:00Z",
+      "activity": "Eat",
+      "place": "Cafe",
+      "recreation": 7
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 3,
+    "fields": {
+      "start_time": "2025-09-01T15:10:00Z",
+      "end_time": "2025-09-01T15:25:00Z",
+      "activity": "Smalltalk",
+      "place": "Office",
+      "recreation": 5
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 4,
+    "fields": {
+      "start_time": "2025-09-02T10:05:00Z",
+      "end_time": "2025-09-02T10:35:00Z",
+      "activity": "Walk",
+      "place": "Forest",
+      "recreation": 8
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 5,
+    "fields": {
+      "start_time": "2025-09-02T12:10:00Z",
+      "end_time": "2025-09-02T12:40:00Z",
+      "activity": "Eat",
+      "place": "Office",
+      "recreation": 6
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 6,
+    "fields": {
+      "start_time": "2025-09-03T11:55:00Z",
+      "end_time": "2025-09-03T12:15:00Z",
+      "activity": "Smalltalk",
+      "place": "Cafe",
+      "recreation": 4
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 7,
+    "fields": {
+      "start_time": "2025-09-03T16:10:00Z",
+      "end_time": "2025-09-03T16:30:00Z",
+      "activity": "Walk",
+      "place": "Park",
+      "recreation": 7
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 8,
+    "fields": {
+      "start_time": "2025-09-04T09:00:00Z",
+      "end_time": "2025-09-04T09:20:00Z",
+      "activity": "Walk",
+      "place": "Office",
+      "recreation": 5
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 9,
+    "fields": {
+      "start_time": "2025-09-04T12:15:00Z",
+      "end_time": "2025-09-04T12:45:00Z",
+      "activity": "Eat",
+      "place": "Cafe",
+      "recreation": 7
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 10,
+    "fields": {
+      "start_time": "2025-09-05T14:00:00Z",
+      "end_time": "2025-09-05T14:10:00Z",
+      "activity": "Smalltalk",
+      "place": "Office",
+      "recreation": 3
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 11,
+    "fields": {
+      "start_time": "2025-09-06T10:30:00Z",
+      "end_time": "2025-09-06T10:55:00Z",
+      "activity": "Walk",
+      "place": "Forest",
+      "recreation": 9
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 12,
+    "fields": {
+      "start_time": "2025-09-06T13:00:00Z",
+      "end_time": "2025-09-06T13:20:00Z",
+      "activity": "Eat",
+      "place": "Park",
+      "recreation": 6
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 13,
+    "fields": {
+      "start_time": "2025-09-07T15:30:00Z",
+      "end_time": "2025-09-07T16:00:00Z",
+      "activity": "Sleep",
+      "place": "Office",
+      "recreation": 8
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 14,
+    "fields": {
+      "start_time": "2025-09-08T09:20:00Z",
+      "end_time": "2025-09-08T09:35:00Z",
+      "activity": "Smalltalk",
+      "place": "Cafe",
+      "recreation": 6
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 15,
+    "fields": {
+      "start_time": "2025-09-08T12:10:00Z",
+      "end_time": "2025-09-08T12:40:00Z",
+      "activity": "Eat",
+      "place": "Office",
+      "recreation": 5
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 16,
+    "fields": {
+      "start_time": "2025-09-09T10:00:00Z",
+      "end_time": "2025-09-09T10:25:00Z",
+      "activity": "Walk",
+      "place": "Park",
+      "recreation": 7
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 17,
+    "fields": {
+      "start_time": "2025-09-10T11:40:00Z",
+      "end_time": "2025-09-10T12:00:00Z",
+      "activity": "Smalltalk",
+      "place": "Office",
+      "recreation": 5
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 18,
+    "fields": {
+      "start_time": "2025-09-10T14:15:00Z",
+      "end_time": "2025-09-10T14:45:00Z",
+      "activity": "Sleep",
+      "place": "Forest",
+      "recreation": 7
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 19,
+    "fields": {
+      "start_time": "2025-09-11T09:05:00Z",
+      "end_time": "2025-09-11T09:25:00Z",
+      "activity": "Walk",
+      "place": "Cafe",
+      "recreation": 6
+    }
+  },
+  {
+    "model": "breaktime.break",
+    "pk": 20,
+    "fields": {
+      "start_time": "2025-09-11T12:30:00Z",
+      "end_time": "2025-09-11T12:50:00Z",
+      "activity": "Eat",
+      "place": "Park",
+      "recreation": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 1,
+    "fields": {
+      "start_time": "2025-09-01T22:30:00Z",
+      "end_time": "2025-09-02T06:30:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 2,
+    "fields": {
+      "start_time": "2025-09-02T22:45:00Z",
+      "end_time": "2025-09-03T06:50:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 7,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 3,
+    "fields": {
+      "start_time": "2025-09-03T23:10:00Z",
+      "end_time": "2025-09-04T06:40:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 7,
+      "tiredness_before_sleeping": 8
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 4,
+    "fields": {
+      "start_time": "2025-09-04T22:20:00Z",
+      "end_time": "2025-09-05T06:10:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 5,
+    "fields": {
+      "start_time": "2025-09-05T22:55:00Z",
+      "end_time": "2025-09-06T06:30:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 7,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 6,
+    "fields": {
+      "start_time": "2025-09-06T13:30:00Z",
+      "end_time": "2025-09-06T14:20:00Z",
+      "sleeping_place": "Sofa",
+      "recreation": 6,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 7,
+    "fields": {
+      "start_time": "2025-09-06T23:40:00Z",
+      "end_time": "2025-09-07T07:15:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 9,
+      "tiredness_before_sleeping": 8
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 8,
+    "fields": {
+      "start_time": "2025-09-07T22:50:00Z",
+      "end_time": "2025-09-08T06:30:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 9,
+    "fields": {
+      "start_time": "2025-09-08T22:35:00Z",
+      "end_time": "2025-09-09T06:20:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 7,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 10,
+    "fields": {
+      "start_time": "2025-09-09T22:45:00Z",
+      "end_time": "2025-09-10T06:30:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 11,
+    "fields": {
+      "start_time": "2025-09-10T22:10:00Z",
+      "end_time": "2025-09-11T06:05:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 12,
+    "fields": {
+      "start_time": "2025-09-11T22:50:00Z",
+      "end_time": "2025-09-12T06:40:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 7,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 13,
+    "fields": {
+      "start_time": "2025-09-12T23:05:00Z",
+      "end_time": "2025-09-13T07:15:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 9,
+      "tiredness_before_sleeping": 8
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 14,
+    "fields": {
+      "start_time": "2025-09-13T13:10:00Z",
+      "end_time": "2025-09-13T13:50:00Z",
+      "sleeping_place": "Sofa",
+      "recreation": 6,
+      "tiredness_before_sleeping": 5
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 15,
+    "fields": {
+      "start_time": "2025-09-13T22:40:00Z",
+      "end_time": "2025-09-14T06:55:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 16,
+    "fields": {
+      "start_time": "2025-09-14T22:35:00Z",
+      "end_time": "2025-09-15T06:25:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 17,
+    "fields": {
+      "start_time": "2025-09-15T22:55:00Z",
+      "end_time": "2025-09-16T06:50:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 7,
+      "tiredness_before_sleeping": 7
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 18,
+    "fields": {
+      "start_time": "2025-09-16T22:20:00Z",
+      "end_time": "2025-09-17T06:15:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 19,
+    "fields": {
+      "start_time": "2025-09-17T22:30:00Z",
+      "end_time": "2025-09-18T06:35:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 8,
+      "tiredness_before_sleeping": 6
+    }
+  },
+  {
+    "model": "sleeptime.sleepinterval",
+    "pk": 20,
+    "fields": {
+      "start_time": "2025-09-18T23:10:00Z",
+      "end_time": "2025-09-19T07:00:00Z",
+      "sleeping_place": "Bed",
+      "recreation": 9,
+      "tiredness_before_sleeping": 8
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 1,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 8,
+      "milliliters": 500
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 2,
+    "fields": {
+      "drink": "Coffee",
+      "thirst_quenched": 4,
+      "milliliters": 250
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 3,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 7,
+      "milliliters": 750
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 4,
+    "fields": {
+      "drink": "Beer",
+      "thirst_quenched": 5,
+      "milliliters": 330
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 5,
+    "fields": {
+      "drink": "Coffee",
+      "thirst_quenched": 3,
+      "milliliters": 200
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 6,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 9,
+      "milliliters": 600
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 7,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 6,
+      "milliliters": 400
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 8,
+    "fields": {
+      "drink": "Beer",
+      "thirst_quenched": 4,
+      "milliliters": 500
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 9,
+    "fields": {
+      "drink": "Coffee",
+      "thirst_quenched": 5,
+      "milliliters": 300
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 10,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 10,
+      "milliliters": 1000
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 11,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 7,
+      "milliliters": 350
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 12,
+    "fields": {
+      "drink": "Beer",
+      "thirst_quenched": 5,
+      "milliliters": 330
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 13,
+    "fields": {
+      "drink": "Coffee",
+      "thirst_quenched": 4,
+      "milliliters": 220
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 14,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 8,
+      "milliliters": 700
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 15,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 9,
+      "milliliters": 800
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 16,
+    "fields": {
+      "drink": "Beer",
+      "thirst_quenched": 3,
+      "milliliters": 400
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 17,
+    "fields": {
+      "drink": "Coffee",
+      "thirst_quenched": 5,
+      "milliliters": 250
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 18,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 6,
+      "milliliters": 500
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 19,
+    "fields": {
+      "drink": "Beer",
+      "thirst_quenched": 4,
+      "milliliters": 330
+    }
+  },
+  {
+    "model": "drink.drink",
+    "pk": 20,
+    "fields": {
+      "drink": "Water",
+      "thirst_quenched": 8,
+      "milliliters": 600
+    }
+  }
+]
