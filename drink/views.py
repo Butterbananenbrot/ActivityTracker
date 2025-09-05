@@ -20,42 +20,31 @@ def welcome_page(request):
     return render(request, 'drink/index.html', {"drink_data_context": drinks})
 
 
-@cache_page(60)  # cache for 60 seconds
 def drink_chart_svg(request):
     qs = (
         Drink.objects
-        .annotate(
-            drink_norm=Case(
-                When(drink__in=["W", "Water"], then=Value("Water")),
-                When(drink__in=["C", "Coffee"], then=Value("Coffee")),
-                When(drink__in=["B", "Beer"], then=Value("Beer")),
-                default=Value("Other"),
-                output_field=CharField(),
-            )
-        )
-        .values("drink_norm")
+        .values("drink")
         .annotate(count=Count("id"))
     )
 
-    labels = ["Water", "Coffee", "Beer"]
-    counts_map = {r["drink_norm"]: r["count"] for r in qs}
+    labels = [choice[0] for choice in Drink.DRINK_CHOICES]
+    counts_map = {r["drink"]: r["count"] for r in qs}
     data = [counts_map.get(x, 0) for x in labels]
 
     fig, ax = plt.subplots(figsize=(6, 3))
     ax.bar(labels, data)
-    ax.set_title("Number of Drinks")
-    # ax.set_ylabel("Anzahl")
+    ax.set_title("Number of drinks")
     ax.set_ylim(bottom=0)
+
     for i, v in enumerate(data):
         ax.text(i, v, str(v), ha="center", va="bottom", fontsize=9)
-    fig.tight_layout()
 
+    fig.tight_layout()
     buf = io.BytesIO()
     fig.savefig(buf, format="svg", dpi=144)
     plt.close(fig)
     buf.seek(0)
     return HttpResponse(buf.getvalue(), content_type="image/svg+xml")
-
 
 class DrinkCreateView(CreateView):
 
