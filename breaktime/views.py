@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.decorators.cache import cache_page
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from matplotlib import pyplot as plt
 
 from auxiliary.context_generator import create_break_data_context
@@ -16,7 +16,6 @@ from django.db.models import Case, When, Value, CharField, Count
 def welcome_page(request):
     breaks = create_break_data_context()
     return render(request, 'breaktime/index.html', {"break_data_context": breaks})
-
 
 
 def break_chart_svg(request):
@@ -47,7 +46,6 @@ def break_chart_svg(request):
 
 
 class BreakCreateView(CreateView):
-
     model = Break
 
     fields = ["start_time", "end_time", "activity", "place", "recreation"]
@@ -61,3 +59,13 @@ class BreakCreateView(CreateView):
         form.fields["start_time"].widget = forms.DateTimeInput(attrs={"type": "datetime-local"})
         form.fields["end_time"].widget = forms.DateTimeInput(attrs={"type": "datetime-local"})
         return form
+
+
+class BreakUpdateView(UpdateView):
+    model = Break
+
+    fields = ["start_time", "end_time", "activity", "place", "recreation"]
+
+    template_name = "update_view.html"
+
+    success_url = reverse_lazy("breaktime:index")
