@@ -10,5 +10,6 @@ urlpatterns = [
     path("", views.welcome_page, name="index"),
     path("chart-mpl.svg", views.sleepinterval_chart_svg, name="sleepinterval_chart_svg"),  # new chart view
     path("create", views.SleepIntervalCreateView.as_view()),
-    path("<pk>/update", views.SleepIntervalUpdateView.as_view())
+    path("<pk>/update", views.SleepIntervalUpdateView.as_view()),
+    path("<pk>/delete", views.SleepIntervalDeleteView.as_view())
 ]

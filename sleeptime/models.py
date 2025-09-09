@@ -14,9 +14,7 @@ class SleepInterval(models.Model):
     tiredness_before_sleeping = models.IntegerField(choices=ONE_TO_TEN_SCALE, default=1)
 
     def __str__(self):
-        # Da wir die Methode auf einem Objekt aufrufen,
-        # müssen wir SLEEPING_PLACE_CHOICES_MAP als Klassenattribut abrufen
-        return self.sleeping_place
+        return f"Sleeping at {self.sleeping_place} lasting {self.end_time - self.start_time} with id {self.id}"
 
     def sleep_interval_is_shorter_than_20_hours(self):
         # Validierungsmethode: TRUE bei korrektem Input

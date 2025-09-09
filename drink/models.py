@@ -11,7 +11,7 @@ class Drink(models.Model):
     milliliters = models.IntegerField(validators=[MinValueValidator(20), MaxValueValidator(1000)])
 
     def __str__(self):
-        return f"{self.drink}, ({self.milliliters} ml)"
+        return f"{self.milliliters} ml {self.drink} quenching {self.thirst_quenched} thirst"
 
     def max_one_liter(self):
         # Validierungsmethode: TRUE bei korrektem Input

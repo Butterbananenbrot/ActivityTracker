@@ -1,0 +1,11 @@
+{% load filters %}
+
+<form method="POST" enctype="multipart/form-data">
+
+    <!-- Security token -->
+    {% csrf_token %}
+
+    <p>Are you sure you want to DELETE the entry {{ object }}?</p>
+    
+    <input type="submit" value="Delete">
+</form>

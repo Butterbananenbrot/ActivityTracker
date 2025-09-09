@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.db.models import Case, When, Value, CharField, Count
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from auxiliary.context_generator import create_drink_data_context
 from drink.models import Drink
@@ -65,3 +65,15 @@ class DrinkUpdateView(UpdateView):
     template_name = "update_view.html"
 
     success_url = reverse_lazy("drink:index")
+
+
+class DrinkDeleteView(DeleteView):
+    model = Drink
+
+    fields = ["drink", "thirst_quenched", "milliliters"]
+
+    template_name = "delete_view.html"
+
+    success_url = reverse_lazy("drink:index")
+
+

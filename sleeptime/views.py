@@ -4,7 +4,7 @@ from django import forms
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from matplotlib import pyplot as plt
 
 from auxiliary.context_generator import create_sleepinterval_data_context
@@ -67,5 +67,16 @@ class SleepIntervalUpdateView(UpdateView):
     fields = ["start_time", "end_time", "sleeping_place", "recreation", "tiredness_before_sleeping"]
 
     template_name = "update_view.html"
+
+    success_url = reverse_lazy("sleeptime:index")
+
+
+class SleepIntervalDeleteView(DeleteView):
+
+    model = SleepInterval
+
+    fields = ["start_time", "end_time", "sleeping_place", "recreation", "tiredness_before_sleeping"]
+
+    template_name = "delete_view.html"
 
     success_url = reverse_lazy("sleeptime:index")

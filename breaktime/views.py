@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.decorators.cache import cache_page
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from matplotlib import pyplot as plt
 
 from auxiliary.context_generator import create_break_data_context
@@ -69,3 +69,14 @@ class BreakUpdateView(UpdateView):
     template_name = "update_view.html"
 
     success_url = reverse_lazy("breaktime:index")
+
+
+class BreakDeleteView(DeleteView):
+    model = Break
+
+    fields = ["start_time", "end_time", "activity", "place", "recreation"]
+
+    template_name = "delete_view.html"
+
+    success_url = reverse_lazy("breaktime:index")
+

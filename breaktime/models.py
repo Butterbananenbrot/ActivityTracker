@@ -16,7 +16,7 @@ class Break(models.Model):
     recreation = models.IntegerField(choices=ONE_TO_TEN_SCALE, default=5) # import from aux module
 
     def __str__(self):
-        return self.activity
+        return f"{self.activity} at {self.place} lasting {self.end_time - self.start_time} with id {self.id}"
 
     def break_took_max_eight_hours(self ):
         # Validierungsmethode: TRUE bei korrektem Input
