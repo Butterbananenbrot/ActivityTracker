@@ -2,7 +2,9 @@ from django.shortcuts import render
 
 
 def generate_table_view(model_class):
+    """Generate a generic table view for the given model class."""
     def table_view(request):
+        """Render a table view for all objects of the model class."""
         queryset = model_class.objects.all()
         rows = list(queryset.values())
 

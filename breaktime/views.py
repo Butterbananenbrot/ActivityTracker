@@ -14,11 +14,13 @@ from django.db.models import Case, When, Value, CharField, Count
 
 
 def welcome_page(request):
+    """Render the welcome page for the breaktime app with break data context."""
     breaks = create_break_data_context()
     return render(request, 'breaktime/index.html', {"break_data_context": breaks})
 
 
 def break_chart_svg(request):
+    """Generate and return an SVG bar chart showing the number of breaks per activity."""
     qs = (
         Break.objects
         .values("activity")
@@ -46,15 +48,14 @@ def break_chart_svg(request):
 
 
 class BreakCreateView(CreateView):
+    """View for creating a new Break instance."""
     model = Break
-
     fields = ["start_time", "end_time", "activity", "place", "recreation"]
-
     template_name = "create_view.html"
-
     success_url = reverse_lazy("breaktime:index")
 
     def get_form(self, form_class=None):
+        """Customize the form to use datetime-local widgets for start and end time."""
         form = super().get_form(form_class)
         form.fields["start_time"].widget = forms.DateTimeInput(attrs={"type": "datetime-local"})
         form.fields["end_time"].widget = forms.DateTimeInput(attrs={"type": "datetime-local"})
@@ -62,21 +63,16 @@ class BreakCreateView(CreateView):
 
 
 class BreakUpdateView(UpdateView):
+    """View for updating an existing Break instance."""
     model = Break
-
     fields = ["start_time", "end_time", "activity", "place", "recreation"]
-
     template_name = "update_view.html"
-
     success_url = reverse_lazy("breaktime:index")
 
 
 class BreakDeleteView(DeleteView):
+    """View for deleting a Break instance."""
     model = Break
-
     fields = ["start_time", "end_time", "activity", "place", "recreation"]
-
     template_name = "delete_view.html"
-
     success_url = reverse_lazy("breaktime:index")
-

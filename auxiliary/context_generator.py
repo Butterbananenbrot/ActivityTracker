@@ -6,9 +6,8 @@ from breaktime.models import Break
 from sleeptime.models import SleepInterval
 
 
-
-
 def create_drink_data_context():
+    """Create a context list of all drink events for use in templates or APIs."""
     mapping = {"W": "Water", "C": "Coffee", "B": "Beer"}
     drinks = [
         {
@@ -23,6 +22,7 @@ def create_drink_data_context():
 
 
 def create_break_data_context():
+    """Create a context list of all break events for use in templates or APIs."""
     breaks = [
         {
             "id": b.id,
@@ -38,6 +38,7 @@ def create_break_data_context():
 
 
 def create_sleepinterval_data_context():
+    """Create a context list of all sleep intervals for use in templates or APIs."""
     sleepintervals = [
         {
             "id": s.id,

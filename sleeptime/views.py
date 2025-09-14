@@ -13,11 +13,13 @@ from django.db.models import Case, When, Value, CharField, Count
 
 
 def welcome_page(request):
+    """Render the welcome page for the sleeptime app with sleep interval data context."""
     sleepintervals = create_sleepinterval_data_context()
     return render(request, 'sleeptime/index.html', {"sleepinterval_data_context": sleepintervals})
 
 
 def sleepinterval_chart_svg(request):
+    """Generate and return an SVG bar chart showing the number of sleep intervals per sleeping place."""
     qs = (
         SleepInterval.objects
         .values("sleeping_place")
@@ -44,13 +46,10 @@ def sleepinterval_chart_svg(request):
     return HttpResponse(buf.getvalue(), content_type="image/svg+xml")
 
 class SleepIntervalCreateView(CreateView):
-
+    """View for creating a new SleepInterval instance."""
     model = SleepInterval
-
     fields = ["start_time", "end_time", "sleeping_place", "recreation", "tiredness_before_sleeping"]
-
     template_name = "create_view.html"
-
     success_url = reverse_lazy("sleeptime:index")
 
     def get_form(self, form_class=None):
@@ -61,22 +60,17 @@ class SleepIntervalCreateView(CreateView):
 
 
 class SleepIntervalUpdateView(UpdateView):
-
+    """View for updating an existing SleepInterval instance."""
     model = SleepInterval
-
     fields = ["start_time", "end_time", "sleeping_place", "recreation", "tiredness_before_sleeping"]
-
     template_name = "update_view.html"
-
     success_url = reverse_lazy("sleeptime:index")
 
 
 class SleepIntervalDeleteView(DeleteView):
-
+    """View for deleting a SleepInterval instance."""
     model = SleepInterval
-
     fields = ["start_time", "end_time", "sleeping_place", "recreation", "tiredness_before_sleeping"]
-
     template_name = "delete_view.html"
 
     success_url = reverse_lazy("sleeptime:index")

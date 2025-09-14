@@ -14,13 +14,14 @@ import matplotlib.pyplot as plt
 from django.views.decorators.cache import cache_page
 
 
-# Create your views here.
 def welcome_page(request):
+    """Render the welcome page for the drink app with drink data context."""
     drinks = create_drink_data_context()
     return render(request, 'drink/index.html', {"drink_data_context": drinks})
 
 
 def drink_chart_svg(request):
+    """Generate and return an SVG bar chart showing the number of drinks per type."""
     qs = (
         Drink.objects
         .values("drink")
@@ -48,32 +49,24 @@ def drink_chart_svg(request):
 
 
 class DrinkCreateView(CreateView):
+    """View for creating a new Drink instance."""
     model = Drink
-
     fields = ["drink", "thirst_quenched", "milliliters"]
-
     template_name = "create_view.html"
-
     success_url = reverse_lazy("drink:index")
 
 
 class DrinkUpdateView(UpdateView):
+    """View for updating an existing Drink instance."""
     model = Drink
-
     fields = ["drink", "thirst_quenched", "milliliters"]
-
     template_name = "update_view.html"
-
     success_url = reverse_lazy("drink:index")
 
 
 class DrinkDeleteView(DeleteView):
+    """View for deleting a Drink instance."""
     model = Drink
-
     fields = ["drink", "thirst_quenched", "milliliters"]
-
     template_name = "delete_view.html"
-
     success_url = reverse_lazy("drink:index")
-
-
